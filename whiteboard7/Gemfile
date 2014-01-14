@@ -1,0 +1,85 @@
+source 'https://rubygems.org'
+
+gem 'rails', '3.2.16'
+
+# server
+gem 'thin'
+gem 'unicorn'
+gem 'websocket-rails', '0.6.2'
+#gem 'websocket-rails', path: '../websocket-rails'
+gem 'figaro'
+gem 'whenever', :require => false
+
+# data
+gem 'mysql2'
+gem 'attribute_normalizer'
+gem 'simple_enum'
+gem 'email_validator'
+gem 'state_machine'
+gem 'active_model_serializers'
+gem 'carrierwave'
+gem 'ox'
+gem 'sequel'
+gem 'sqlite3'
+
+# user
+gem 'cancan'
+gem 'devise', '~> 3.0.0'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'bootstrap-sass', '~> 3.0.0.0.rc'
+  gem 'font-awesome-rails'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platforms => :ruby
+
+  gem 'uglifier', '>= 1.0.3'
+end
+
+# js
+gem 'jquery-rails'
+gem 'backbone-on-rails'
+gem 'marionette-rails'
+gem 'ejs'
+gem 'js-routes'
+gem 'i18n-js'
+
+# general
+gem 'activemerchant'
+gem 'money'
+gem 'inherited_resources'
+gem 'rest-client'
+gem 'roadie', '~> 2.4.1'
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'debugger'
+
+# dev
+gem 'awesome_print'
+group :development, :test do
+  gem 'zeus', '~> 0.13.4.pre2'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'database_cleaner'
+  gem 'quiet_assets'
+  gem 'letter_opener'
+  gem 'konacha'
+  gem 'konacha-chai-matchers'
+end
