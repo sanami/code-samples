@@ -1,0 +1,89 @@
+source 'https://rubygems.org'
+
+gem 'rails', '3.2.11'
+
+# server
+gem 'thin', :require => false, :platforms => :ruby, :group => :development
+gem 'passenger', :require => false, :platforms => :ruby, :group => :production
+gem 'execjs'
+gem 'therubyracer', '= 0.10', :platforms => :ruby #NOTE Problems under Windows
+gem 'whenever', :require => false
+gem 'capistrano', '>= 2.5.18', :require => false
+gem 'capistrano-ext', '>= 1.2.1', :require => false
+
+# Gems used only for assets and not required in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'jquery-ui-rails'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+# html / js
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'rails-backbone', '0.7.2' #TODO upgrade
+gem 'haml_coffee_assets'
+
+# data
+gem 'mysql2'
+gem 'auto_strip_attributes', '~> 1.0'
+gem 'enumerated_attribute', :git => 'https://github.com/jeffp/enumerated_attribute.git' # https://github.com/jeffp/enumerated_attribute/issues/42
+gem 'simple_enum'
+gem 'default_value_for'
+gem 'ancestry'
+gem 'kaminari'
+gem 'rabl', '0.7.1' #TODO 0.7.6 not work
+gem 'spreadsheet', :require => false
+gem 'roo', :require => false
+gem 'axlsx_rails'
+gem 'fastercsv' # only Ruby 1.8
+gem 'oj'
+gem 'carrierwave'
+
+#group :production do
+#  gem 'pg'
+#end
+#group :development, :test do
+#  gem 'mysql2'
+#end
+
+# users
+gem 'net-ldap', :require => 'net/ldap'
+gem 'cancan'
+
+# dev
+#gem 'hodel_3000_compliant_logger' # Replace standard logger
+gem 'awesome_print'
+gem 'rails_admin'
+group :development do
+  gem 'annotate', '~> 2.4.1.beta', :require => false
+
+  # To use debugger
+  # gem 'debugger'
+  #gem 'ruby-debug', :require => false
+
+  #gem 'rails_best_practices', :require => false
+  #gem 'rcov', :require => false unless RUBY_PLATFORM =~ /mswin32|mingw/ # only Ruby 1.8
+end
+group :development, :test do
+  gem 'letter_opener'
+  gem 'quiet_assets'
+  gem 'rspec'
+  gem 'rspec-rails'
+end
+group :test do
+  gem 'spork', '~> 0.9.0.rc', :require => false
+  gem 'database_cleaner', :require => false
+  gem 'system_timer'
+  gem 'cucumber-rails', :require => false
+  gem 'factory_girl', '~> 2.6'
+  gem 'factory_girl_rails'
+
+  #gem 'simplecov', '>= 0.4.0', :require => false # only Ruby 1.9
+  #gem 'ripper', '~> 1.0.5', :require => false # only Ruby 1.8
+  #gem 'ruby-prof', :require => false
+  #gem 'metric_fu', :require => false unless RUBY_PLATFORM =~ /mswin32|mingw/
+end
+
+# general
